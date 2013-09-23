@@ -82,7 +82,7 @@ public class BookInfo {
         	if (bookStatus.equals("lost") || bookStatus.equals("checked-in")|| bookStatus.equals("in-queue") || bookStatus.equals("available"))
         		return true;
         	else if (bookStatus.isEmpty()) 
-        		return false;
+        		return true;
         	else
         		return false;
         }
