@@ -116,7 +116,12 @@ public class Book {
     
     //set the book status
     public void setStatus (String status){
+    	if (status.isEmpty()){
+    		this.status="available";
+    	}
+    	else{
     		this.status = status;   		
+    	}
     }
     
     //check if status is valid
@@ -125,7 +130,7 @@ public class Book {
     	if (bookStatus.equals("lost") || bookStatus.equals("checked-in")|| bookStatus.equals("in-queue") || bookStatus.equals("available"))
     		return true;    		
     	else if (status.isEmpty()) 
-    		return false;
+    		return true;
     	else
     		return false;
     }
