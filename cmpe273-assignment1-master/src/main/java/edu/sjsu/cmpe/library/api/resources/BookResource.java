@@ -2,6 +2,7 @@ package edu.sjsu.cmpe.library.api.resources;
 
 import java.util.ArrayList;
 
+import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -62,7 +63,7 @@ public class BookResource {
     @Path("/")
     @Timed(name="create-book")
     
-    public Response createNewBook ( BookInfo bookInfo ){
+    public Response createNewBook (@Valid BookInfo bookInfo ){
     	
     	ErrorMessage errorMsg = new ErrorMessage();
     	
