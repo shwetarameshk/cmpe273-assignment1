@@ -3,6 +3,8 @@ package edu.sjsu.cmpe.library.api.resources;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import edu.sjsu.cmpe.library.domain.Author;
 import edu.sjsu.cmpe.library.domain.Review;
@@ -12,10 +14,12 @@ import java.util.ArrayList;
 @XmlRootElement
 public class BookInfo {
 		
-		
+	@NotEmpty
+	@NotNull
         public String title;
 		
-		
+	@NotEmpty
+	@NotNull	
         @JsonProperty ("publication-date")
         public String publicationDate;
         
@@ -26,6 +30,8 @@ public class BookInfo {
         
 		public String status;
         		
+        @NotEmpty
+	@NotNull
         public ArrayList<Author> authors;
         
 		public ArrayList<Review> reviews;
