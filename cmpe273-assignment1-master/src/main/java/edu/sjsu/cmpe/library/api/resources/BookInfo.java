@@ -42,14 +42,14 @@ public class BookInfo {
         }
         
         public boolean checkTitle(){
-        	if (title=="" || title == null){
+        	if (title.isEmpty()|| title==null){
         		return false;
         	}
         	return true;
         }
         
         public boolean checkPublicationDate(){
-        	if (publicationDate=="" || publicationDate == null){
+        	if (publicationDate.isEmpty() || publicationDate == null){
         		return false;
         	}
         	return true;
@@ -59,7 +59,7 @@ public class BookInfo {
         	boolean nameValid = false;
         	int counter = 0;
         	for (int i =0; i<authors.size(); i++){
-        		if (authors.get(i).getName() != "" && authors.get(i).getName() != null){
+        		if (!authors.get(i).getName().isEmpty() && authors.get(i).getName() != null){
         			counter ++;
         		}
         	}
